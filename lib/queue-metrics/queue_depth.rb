@@ -13,7 +13,7 @@ module Rack
         @instrument_name = "rack.queue-metrics.queue-depth"
         @logger          = logger
         if @logger.nil?
-          @logger = ::Logger.new($stdout)
+          @logger = ::Logger.new("#{Rails.root}/logs/test.log")
           @logger.formatter = L2MetFormatter.new
         end
 
