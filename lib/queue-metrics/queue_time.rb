@@ -30,7 +30,10 @@ module Rack
         report << " request_id=#{request_id}" if request_id
         @logger.info report
 
-        notify(:middleware_start => middleware_start, :request_start => request_start, :request_start_delta => request_start_delta, :request_id => request_id) if should_notify?
+        notify(:middleware_start => middleware_start,
+               :request_start => request_start,
+               :request_start_delta => request_start_delta,
+               :request_id => request_id) if should_notify?
 
         env["MIDDLEWARE_START"] = middleware_start
 
