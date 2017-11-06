@@ -12,7 +12,7 @@ module Rack
         @instrument_name = "rack.queue-metrics.app-time"
         @logger          = logger
         if @logger.nil?
-          @logger = ::Logger.new($stdout)
+          @logger = ::Logger.new("#{Rails.root}/logs/test.log")
           @logger.formatter = L2MetFormatter.new
         end
       end
